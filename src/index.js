@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
+import announcementRoutes from "./routes/announcementRoutes.js";
+import facultyRoutes from "./routes/facultyRoutes.js";
 
 dotenv.config();
 
@@ -28,6 +30,8 @@ app.use(cookieParser());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/announcements", announcementRoutes);
+app.use("/api/faculties", facultyRoutes);
 
 // Base route
 app.get("/", (req, res) => {
